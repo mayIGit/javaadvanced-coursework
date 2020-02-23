@@ -1,10 +1,11 @@
 package com.busyqa.coursework.wk3_answer;
 import java.util.Scanner;
+
 /*
  *  Instructions:
  *  
  *  You are required to compute the power of a number by implementing a calculator.         
- *  Create a class MyCalculator which consists of a single method long power(int, int).     
+ *  Create a class MyCalculator that consists of a single method long power(int, int).     
  *  This method takes two integers, n and p, as parameters and finds the value of n 
  *  to the power of p.                                                                                   
  *  If either n or p is negative, then the method must throw an exception which says        
@@ -19,14 +20,19 @@ import java.util.Scanner;
  *  
  */              
 
-/*  In a Java file is possible to have many classes but only one can be public. 
-	The name of the java file will the same as the public class.*/
+/*  
+ * In a Java file is possible to have many classes but only one can be public. 
+ * The name of the java file will the same as the public class.
+ */
+
 class MyCalculator { 
     /*
-    * Create the method long power(int, int) here.
-    */
+     * Create the method long power(int, int) here.
+     */
 
 	/*
+	 * Hint:
+	 * 
 	 * It's possible to create an Exception with the following code:
 	 *     throw new Exception("here goes your customized message");
 	 */
