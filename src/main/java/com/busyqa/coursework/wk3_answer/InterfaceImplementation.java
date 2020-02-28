@@ -1,5 +1,7 @@
 package com.busyqa.coursework.wk3_answer;
 
+import java.util.Scanner;
+
 /*
  * Instructions:
  * 
@@ -21,27 +23,61 @@ interface AdvancedArithmetic{
 /*
  * Write your code here!!!
  */
+class Calculator implements AdvancedArithmetic{
+
+	@Override
+	public int divisorSum(int n) {
+		int sum = 0;
+		for(int i=1;i<=n;i++)
+		{
+			
+			if(n%i == 0)
+			{
+				sum += i;
+			}
+		}
+		return sum;
+	}
+	
+}
 
 
 class InterfaceImplementation{
     
-	public static void main(String []args){
+	public static void main(String []args) throws Exception{
     	
 		/*
 		 * Uncomment the following chunk of code once the class was created.
 		 */
 		
-        //Calculator myCalculator = new Calculator();
+        Calculator myCalculator = new Calculator();
         
-        //System.out.print("I implemented: ");
-        //ImplementedInterfaceNames(myCalculator);
+        System.out.print("I implemented: ");
+        ImplementedInterfaceNames(myCalculator);
         
-        //Scanner sc = new Scanner(System.in);
-        //int n = sc.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         
+        if(n>1000)
+		{
+        	try {
+        	 throw new Exception("The value cannot be over 1000");
+        	}
+        	finally {
+        		sc.close();
+        	}
+		}
         
-        //System.out.print(myCalculator.divisorSum(n) + "\n");
-      	//sc.close();
+        try {
+        	System.out.print(myCalculator.divisorSum(n) + "\n");
+        	sc.close();
+        }
+        catch(Exception e) {
+        	System.out.println(e);
+        }
+        finally {
+        	sc.close();
+        }
     }
 	
     /*

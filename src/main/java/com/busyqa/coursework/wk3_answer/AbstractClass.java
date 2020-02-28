@@ -27,10 +27,19 @@ abstract class Book{
 /*
  * Write MyBook class here!!!
  */
+class MyBook extends Book{
+
+	@Override
+	void setTitle(String s) {
+		this.title = s;
+	}
+	
+	
+}
 
 public class AbstractClass{
 	
-	@SuppressWarnings("unused")
+	//@SuppressWarnings("unused")
 	public static void main(String []args){
 		
 		Scanner sc=new Scanner(System.in);
@@ -40,9 +49,9 @@ public class AbstractClass{
 		 * Uncomment the following chunk of code once you have created MyBook class
 		 */
 		
-		//MyBook new_novel=new MyBook();
-		//new_novel.setTitle(title);
-		//System.out.println("The title is: "+new_novel.getTitle());
+		MyBook new_novel=new MyBook();
+		new_novel.setTitle(title);
+		System.out.println("The title is: "+new_novel.getTitle());
       	sc.close();
 		
 	}

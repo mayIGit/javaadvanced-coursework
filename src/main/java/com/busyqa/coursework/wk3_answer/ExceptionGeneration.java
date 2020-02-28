@@ -29,6 +29,11 @@ class MyCalculator {
     /*
      * Create the method long power(int, int) here.
      */
+	
+	public long power(int x, int y) {
+		
+		return (long) Math.pow(x, y);
+	}
 
 	/*
 	 * Hint:
@@ -44,18 +49,28 @@ public class ExceptionGeneration {
     public static final Scanner in = new Scanner(System.in);
     
     @SuppressWarnings("unused")
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+    	System.out.println("Enter two numbers");
         while (in .hasNextInt()) {
+        	
             int n = in .nextInt();
             int p = in .nextInt();
+            
+            if(n < 0 || p < 0)
+    		{
+    			throw new Exception("The values cannot be negative");
+    		}
+            else
+            {
             
             try {
             	System.out.println(p + " " + p);
             	/* Uncomment this once you have create created the method.*/
-                //System.out.println(myCalculator.power(n, p));
+                System.out.println(myCalculator.power(n, p));
                 
             } catch (Exception e) {
                 System.out.println(e);
+            }
             }
         }
     }
