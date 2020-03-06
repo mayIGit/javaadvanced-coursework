@@ -3,9 +3,12 @@ package com.busyqa.coursework.wk4_answer;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.LinkedHashSet;
+//import java.util.List;
+//import java.util.Set;
+import java.util.*;
 
 public class Collections {
 
@@ -53,8 +56,48 @@ public class Collections {
 	public static void main(String[] args) {
 		
 		List<String> list = new Collections().readFile();
-
 		/* Add your solution here. */
+		System.out.println("Original: " + list);
+		
+		Set<String> setList = new LinkedHashSet<String>(list); //keeps the order and removes repeated elements
+		System.out.println("Removed repeated: " + setList);
+		
+		list.clear();
+		for(String s: setList)
+		{
+			list.add(s);
+		}
+		//sort list
+		//Collections.sort - cannot be used because this class is called Collections unless you use the full name
+		//so, first converting to an array, sorting the array and then changing it back to List
+		//The aim is to use the best time complexity; arrays.sort uses quick sort algorithm and so it works best
+		
+//					String[] myArr = new String[setList.size()]; 
+//					setList.toArray(myArr);
+//					Arrays.sort(myArr);
+//					list.clear();
+//					list = Arrays.asList(myArr);
+		
+		
+		
+		java.util.Collections.sort(list);
+		System.out.println("Sorted: " + list);
+		
+		//Binary search for 'Blue'
+		int res = java.util.Collections.binarySearch(list,"Blue");
+		
+		if(res >= 0) {
+			System.out.println("Blue found at index: " + res);
+		}
+		else
+		{
+			System.out.println("Blue Not found!");
+		}
+		
+		
 	}
+
+
+	
 
 }

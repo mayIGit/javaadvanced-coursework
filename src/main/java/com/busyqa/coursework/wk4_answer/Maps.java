@@ -2,8 +2,14 @@ package com.busyqa.coursework.wk4_answer;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class Maps {
 	
@@ -58,6 +64,15 @@ public class Maps {
 	public static void main(String[] args) {
 		Map<Integer,String> map = new Maps().readFile();
 		
+		
 		/* Add your solution here. */
+		
+		//Solution1 - creating a ArrayList from the Hashmap entries
+		
+		Set<Entry<Integer, String>> entries = map.entrySet();
+		ArrayList<Entry<Integer,String>> keyList = new ArrayList<Entry<Integer,String>>(entries);
+		//way to sort ArrayList of type <Entry<>>
+		keyList.sort(Comparator.comparing(Entry::getKey));
+		System.out.printf("Key List: " + keyList);
 	}
 }

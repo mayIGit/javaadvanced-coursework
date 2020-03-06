@@ -16,6 +16,10 @@ public class GenericMethod {
 	public static <E> void print(Collection<E> collection) {
 	
 		/* Add your solution here. */
+		for(E x : collection) {
+			//System.out.println(x);
+			System.out.printf("[ %s ]", x);
+		}
 	}
 	
 	
