@@ -70,9 +70,12 @@ public class Maps {
 		//Solution1 - creating a ArrayList from the Hashmap entries
 		
 		Set<Entry<Integer, String>> entries = map.entrySet();
-		ArrayList<Entry<Integer,String>> keyList = new ArrayList<Entry<Integer,String>>(entries);
+		ArrayList<Entry<Integer,String>> keyList = 
+				new ArrayList<Entry<Integer,String>>(entries);
+		
 		//way to sort ArrayList of type <Entry<>>
 		keyList.sort(Comparator.comparing(Entry::getKey));
+		
 		System.out.printf("Key List: " + keyList);
 	}
 }
